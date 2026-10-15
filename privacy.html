@@ -48,7 +48,7 @@
   <tr><td>The surrounding sentence, as context for a lookup</td><td>Only if you turn <strong>Send sentence for context</strong> on (off by default)</td><td>DeepL, as a context parameter, if you use DeepL</td></tr>
 </table>
 <p>Every request is made without cookies and without a referrer, so the services above receive the word and nothing about which page you were reading.</p>
-<p>Results are cached on your device for 30 days, so a word you have looked up before makes no request at all.</p>
+<p>Results are cached on your device for 30 days, so a word the dictionary service has answered before makes no request at all. A word it failed to answer may be asked for again later.</p>
 
 <h2>What never leaves your browser</h2>
 <ul>
@@ -57,12 +57,14 @@
   <li>Your word list, saved sentences, reading list and study history — unless you turn on sync, described below.</li>
   <li>Any word the extension underlines. Underlining is graded against a dictionary bundled inside the extension; it reads every word on the page and transmits none of them.</li>
   <li>Paragraph translation, which uses your browser's own on-device translator and has no online fallback.</li>
+  <li>The sentence you translate with the 文A button on a word card while no AI credentials are saved (versions after 0.7.0): that button then uses the same on-device translator.</li>
+  <li>A word you type into <strong>Look up a word</strong> in the toolbar popup (versions after 0.7.0). It is answered from the dictionary bundled inside the extension and nothing else, so a word that dictionary lacks is reported as not found rather than sent anywhere.</li>
 </ul>
 
 <h2>The two optional features that send more</h2>
 <p>Both are off when you install the extension, and neither can be turned on by accident: each needs you to paste something into the extension's settings.</p>
-<p><strong>Sync.</strong> If you deploy the sync server (source included with the extension) and paste its address into the word list page, your word list is sent to that server <strong>encrypted in your browser</strong> with a key derived from a code that never leaves your device. The server stores an opaque id, a version number and bytes it cannot read. There is no account; whoever holds your code can read the list, and nobody can recover it for you. Sync runs about a minute after you file a word and every half hour otherwise, or only when you press <strong>Sync now</strong> if you turn the automatic option off.</p>
-<p><strong>Sentence translation by an AI model (the 文A button on a word card).</strong> If you paste a Cloudflare account id and an API token of your own into the popup, pressing that button sends <strong>the word and the one sentence it appeared in</strong> — nothing else — to <code>api.cloudflare.com</code> (Workers AI), under Cloudflare's terms. The sentence is capped at 400 characters. The token is sent in a request header, stored only on your device, and never given to any web page. The answer is kept in memory while the browser is open and discarded when it closes.</p>
+<p><strong>Sync.</strong> If you deploy a sync server of your own and paste its address into the word list page, your word list is sent to that server <strong>encrypted in your browser</strong> with a key derived from a code that never leaves your device. The server stores an opaque id, a version number and bytes it cannot read. There is no account; whoever holds your code can read the list, and nobody can recover it for you. Sync runs about a minute after you file a word and every half hour otherwise, or only when you press <strong>Sync now</strong> if you turn the automatic option off.</p>
+<p><strong>Sentence translation by an AI model (the 文A button on a word card).</strong> If you paste a Cloudflare account id and an API token of your own into the popup, pressing that button sends <strong>the word and the one sentence it appeared in</strong> — nothing else — to <code>api.cloudflare.com</code> (Workers AI), under Cloudflare's terms. The sentence is capped at 400 characters. The token is sent in a request header, stored only on your device, and never given to any web page. The answer is kept in memory while the browser is open and discarded when it closes. Without these credentials the same button translates the sentence on your device and sends nothing (versions after 0.7.0; in 0.7.0 the button is not shown without them).</p>
 
 <h2>What is stored on your device</h2>
 <p>All of it is in the browser's extension storage, which is removed when you uninstall:</p>
@@ -85,7 +87,7 @@
   <tr><td><code>offscreen</code></td><td>Play pronunciation audio outside the web page.</td></tr>
   <tr><td><code>alarms</code></td><td>The half-hourly sync round — only if you have set up sync; otherwise no alarm exists.</td></tr>
   <tr><td>Access to <code>api.dictionaryapi.dev</code> and <code>api.mymemory.translated.net</code></td><td>The dictionary and translation services above.</td></tr>
-  <tr><td>Access to other websites (optional)</td><td>Granted only when you press <strong>Enable</strong> on a site, or switch <strong>All sites</strong> on. The extension needs to read the page you are looking at in order to underline words and open the card. You can revoke it from the popup or from the browser's extensions page at any time.</td></tr>
+  <tr><td>Access to other websites (optional)</td><td>Granted only when you press <strong>Enable</strong> on a site, switch <strong>All sites</strong> on, or press <strong>Use on all sites</strong> on the welcome page that opens after you install (versions after 0.7.0). The extension needs to read the page you are looking at in order to underline words and open the card. You can revoke it from the popup or from the browser's extensions page at any time.</td></tr>
 </table>
 
 <h2>Third parties</h2>
