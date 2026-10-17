@@ -1,7 +1,8 @@
-# Lexi Hover
+# Kenning
 
-The public pages for Lexi Hover, a browser extension: hold Alt and hover any English word for its
-pronunciation, definition and Chinese translation, without leaving the page.
+The public pages for Kenning (called Lexi Hover until 2026-10-17), a hover dictionary for English
+learners: hold Alt and point at any English word for its pronunciation, meaning and a translation,
+without leaving the page.
 
 - **Site:** https://nnncode.github.io/lexi-hover/
 - **Privacy policy:** https://nnncode.github.io/lexi-hover/privacy.html

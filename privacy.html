@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lexi Hover — Privacy Policy</title>
-<meta name="description" content="What Lexi Hover sends, what it keeps on your device, and why each permission exists.">
+<title>Kenning — Privacy Policy</title>
+<meta name="description" content="What Kenning sends, what it keeps on your device, and why each permission exists.">
 <style>
   :root { color-scheme: light dark; --ink: #1c1c1e; --paper: #fff; --rule: #d9d9de; --muted: #5c5c66; --link: #3b4bd6; }
   @media (prefers-color-scheme: dark) { :root { --ink: #e6e6ea; --paper: #17171a; --rule: #35353b; --muted: #a0a0aa; --link: #9aa4ff; } }
@@ -24,12 +24,12 @@
 </style>
 </head>
 <body>
-<nav><a href="./">Lexi Hover</a> · Privacy policy</nav>
+<nav><a href="./">Kenning</a> · Privacy policy</nav>
 
-<h1>Lexi Hover — Privacy Policy</h1>
-<p class="meta">Effective 2026-09-27. Applies to Lexi Hover version 0.7.0 and later.</p>
+<h1>Kenning — Privacy Policy</h1>
+<p class="meta">Effective 2026-09-27, revised 2026-10-17. Applies to version 0.7.0 and later of Kenning, which was called Lexi Hover up to version 0.7.0.</p>
 
-<p>Lexi Hover is a browser extension that shows a dictionary card when you hold Alt and point at an English word, underlines words you may not know, and keeps a word list on your device. It has no account, no analytics and no server of its own.</p>
+<p>Kenning is a browser extension that shows a dictionary card when you hold Alt and point at an English word, underlines words you may not know, and keeps a word list on your device. It has no account, no analytics and no server of its own.</p>
 
 <h2>The short version</h2>
 <ul>
@@ -42,8 +42,8 @@
 <h2>What leaves your browser, and when</h2>
 <table>
   <tr><th>What</th><th>When</th><th>Where it goes</th></tr>
-  <tr><td>One English word</td><td>You hold Alt and point at it</td><td><code>api.dictionaryapi.dev</code> (definitions, pronunciation) and <code>api.mymemory.translated.net</code> (Chinese translation)</td></tr>
-  <tr><td>A phrase or sentence you selected</td><td>Only when you select it <strong>and press the translate button</strong> on its card</td><td><code>api.mymemory.translated.net</code>, or DeepL if you entered your own DeepL key</td></tr>
+  <tr><td>One English word</td><td>You hold Alt and point at it</td><td><code>api.dictionaryapi.dev</code> (definitions, pronunciation) and <code>api.mymemory.translated.net</code> (its translation), or DeepL instead if you entered your own DeepL key — in versions after 0.7.0 not the translation service if you chose English only, nor MyMemory once your browser’s own translator for your language is on this computer (a DeepL key you entered is still asked first)</td></tr>
+  <tr><td>A phrase or sentence you selected</td><td>Only when you select it <strong>and press the translate button</strong> on its card</td><td><code>api.mymemory.translated.net</code>, or DeepL if you entered your own DeepL key — in versions after 0.7.0 not MyMemory once your browser’s own translator for your language is on this computer (a DeepL key you entered is still asked first)</td></tr>
   <tr><td>A pronunciation audio file</td><td>You press the speaker button</td><td>The address the dictionary service returned</td></tr>
   <tr><td>The surrounding sentence, as context for a lookup</td><td>Only if you turn <strong>Send sentence for context</strong> on (off by default)</td><td>DeepL, as a context parameter, if you use DeepL</td></tr>
 </table>
@@ -58,7 +58,9 @@
   <li>Any word the extension underlines. Underlining is graded against a dictionary bundled inside the extension; it reads every word on the page and transmits none of them.</li>
   <li>Paragraph translation, which uses your browser's own on-device translator and has no online fallback.</li>
   <li>The sentence you translate with the 文A button on a word card while no AI credentials are saved (versions after 0.7.0): that button then uses the same on-device translator.</li>
-  <li>A word you type into <strong>Look up a word</strong> in the toolbar popup (versions after 0.7.0). It is answered from the dictionary bundled inside the extension and nothing else, so a word that dictionary lacks is reported as not found rather than sent anywhere.</li>
+  <li>A word or a selected phrase, once your browser’s own translator for your language is on this computer (versions after 0.7.0): it is translated there. The model arrives only when you press something that downloads it — the paragraph switch, the 文A button, a <em>Download the … translator</em> button (on the welcome page, under <strong>Look up a word</strong>, or on the word list page), or changing <strong>Translate to</strong> while paragraph translation is on. The download comes from your browser’s maker.</li>
+  <li>The meanings on your word list page and beside <strong>Check this page</strong> in a language other than Chinese (versions after 0.7.0): your browser’s own translator makes them on this computer.</li>
+  <li>A word you type into <strong>Look up a word</strong> in the toolbar popup (versions after 0.7.0). It is answered from the dictionary bundled inside the extension, and for a language other than Chinese by your browser’s own translator on this computer, and nothing else — so a word that dictionary lacks is reported as not found rather than sent anywhere.</li>
 </ul>
 
 <h2>The two optional features that send more</h2>
@@ -91,7 +93,7 @@
 </table>
 
 <h2>Third parties</h2>
-<p>The services named above receive the words you look up under their own privacy terms: <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a>, <a href="https://mymemory.translated.net/doc/">MyMemory</a>, and, only if you set them up, <a href="https://www.deepl.com/privacy">DeepL</a> and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>. Lexi Hover does not sell, share or otherwise use any data for purposes other than the feature you triggered.</p>
+<p>The services named above receive the words you look up under their own privacy terms: <a href="https://dictionaryapi.dev/">dictionaryapi.dev</a>, <a href="https://mymemory.translated.net/doc/">MyMemory</a>, and, only if you set them up, <a href="https://www.deepl.com/privacy">DeepL</a> and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>. Kenning does not sell, share or otherwise use any data for purposes other than the feature you triggered.</p>
 
 <h2>Children</h2>
 <p>The extension does not collect personal data from anyone, including children.</p>
