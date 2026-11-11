@@ -1,3 +1,8 @@
+> **This repository no longer publishes the pages.** Since 2026-11-11 they are the `lexi-hover/`
+> folder of [NNNCODE/NNNCODE.github.io](https://github.com/NNNCODE/NNNCODE.github.io), at the same
+> addresses. Questions and problems: [open an issue there](https://github.com/NNNCODE/NNNCODE.github.io/issues);
+> an issue opened here is still read.
+
 # Kenning
 
 The public pages for Kenning (called Lexi Hover until 2026-10-17), a hover dictionary for English
